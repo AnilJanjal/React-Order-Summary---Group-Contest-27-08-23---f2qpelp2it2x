@@ -9,13 +9,22 @@ const options = [
   { key: 3, plan: "1-Month Plan", price: "$5.99/1mo" },
 ];
 
+
 const App = () => {
-  const [currentPlan, setCurrentPlan] = useState();
+ const [currentPlan, setCurrentPlan] = useState(options[0]);
+ const changeHandler = (e) => {
+   setCurrentPlan(options[e.target.value]);
+   console.log(e.target.value);
+ };
 
-  const changeHandler = (e) => {
+   const submitHandler = (e) => {
 
-  };
+   e.preventDefault();
 
+   alert("Thanks for Subscribing");
+
+ };
+  
   return (
     <div id="main">
       <div className="container">
